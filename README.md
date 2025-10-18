@@ -59,3 +59,8 @@ pip install --no-cache-dir flask numpy matplotlib
 L'uso di questo prgramma è molto semplice ed è costituito da soli due passaggi:
 1) eseguire il file `main.py` digitando nel terminale `python main.py`
 2) visitare il server creato e seguire le indicazioni, per farlo bisogna aprire un browser (noi abbiamo testato su un borwser Chromium-like) e cercare nella barra dell'URL `LocalHost:5000`.
+
+# Licenza ed uso
+Come dal licenza allegata, il progetto è coperto da licenza MIT. La scritta di copyright nel file `index.html` ha il solo scopo di "fare scena" durante l'open day e non ha alcun valore.
+
+Il progetto è stao scritto all'interno dell'Istituto di Istruzione Superiore "[Jean Monnet](https://www.ismonnet.edu.it/)"
