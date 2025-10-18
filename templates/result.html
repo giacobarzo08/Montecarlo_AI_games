@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result_style.css') }}">
+</head>
+
+<body>
+    <h1>Risultati del ciclo singolo di scommesse</h1>
+    <table>
+        <tr>
+            <th>Tipo di scommessa</th>
+            <th>{{ bet_type }}</th>
+        </tr>
+        <tr>
+            <td>Incasso totale</td>
+            <td>{{ total_earnings }}</td>
+        </tr>
+    </table>
+
+    <button onclick="window.location.href='/'">Torna alla pagina principale</button>
+</body>
+</html>

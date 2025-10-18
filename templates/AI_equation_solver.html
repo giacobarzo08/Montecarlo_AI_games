@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risolutore di Equazioni con AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ai_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Benvenuti alla presentazione di LSA 2025</h1>
+        <p class="subtitle">Esplora i nostri strumenti interattivi</p>
+        
+        <div class="cards-container">
+            <div class="card">
+                <h2>Equazione Lineare</h2>
+                <p>Risolvi equazioni lineari del tipo ax + b = c con la nostra intelligenza artificiale.</p>
+                <button onclick="location.href='/linear_solver'">Vai al Risolutore</button>
+            </div>
+            
+            <div class="card">
+                <h2>Sistema di Equazioni</h2>
+                <p>Lascia che la nostra intelligenza artificiale risolva complesse sistemi di equazioni per te.</p>
+                <button onclick="location.href='/system_solver'">Vai al Risolutore</button>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

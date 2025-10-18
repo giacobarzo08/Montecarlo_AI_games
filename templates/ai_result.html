@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risultati Ai</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result_style.css') }}">
+</head>
+
+<body>
+    <h1>Stiamo risolvendo l'equazione...</h1>
+    <p>Hai scelto di risolvere {{type_equation}}</p>
+    <p>Si è aperto un terminale: segui le indicazioni su di esso.</p>
+    <p>Dopo aver premuto Enter per uscire dal programma, poui chiudere il terminale.</p>
+    <p>Puoi continuare ad esplorare il sito intento che la nostra AI risulve la tua equezione</p>
+    <button onclick="window.location.href='/'">Torna alla pagina principale</button>
+    <br>
+    <button onclick="window.location.href='/remove_models'">Elimina i modelli salvati</button>
+</body>
+</html>

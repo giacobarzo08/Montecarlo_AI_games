@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Simulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='roulette_style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎰 Roulette Simulator</h1>
+        
+        <form action="/simulate" method="POST">
+            <div class="input-group">
+                <label>Tipo di scommessa:</label>
+                <select name="bet_type" id="bet_type" onchange="toggleNumber()">
+                    <option value="straight_up">Straight Up</option>
+                    <option value="red_black">Red/Black</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label>Numero di spin:</label>
+                <input type="number" name="spins" value="1000" min="1">
+            </div>
+            
+            <div class="input-group">
+                <label>Importo scommessa:</label>
+                <input type="number" name="bet" value="1" min="0.01" step="0.01">
+            </div>
+            
+            <div class="input-group" id="numberGroup">
+                <label>Numero per Straight Up (0-36):</label>
+                <input type="number" name="number" value="1" min="0" max="36">
+            </div>
+            
+            <div class="input-group">
+                <label>Con grafico:</label>
+                <select name="with_plot" id="with_plot" onchange="toggleSimulations()">
+                    <option value="false">No</option>
+                    <option value="true">Sì</option>
+                </select>
+            </div>
+            
+            <div class="input-group" id="simulationsGroup" style="display:none;">
+                <label>Numero di simulazioni (per grafico):</label>
+                <input type="number" name="simulations" value="20" min="1">
+            </div>
+            
+            <button type="submit">Avvia Simulazione</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleNumber() {
+            const betType = document.getElementById('bet_type').value;
+            const numberGroup = document.getElementById('numberGroup');
+            numberGroup.style.display = betType === 'straight_up' ? 'block' : 'none';
+        }
+        
+        function toggleSimulations() {
+            const withPlot = document.getElementById('with_plot').value;
+            const simulationsGroup = document.getElementById('simulationsGroup');
+            simulationsGroup.style.display = withPlot === 'true' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

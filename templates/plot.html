@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result_style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>Grafico risultati roulette</h1>
+    <img src="{{url_for('static', filename='plot.png')}}" alt="Grafico">
+    <p>Tipo di scommessa: {{bet_type}}.</p>
+    <button onclick="window.location.href='/'">Torna alla pagina principale</button>
+</body>
