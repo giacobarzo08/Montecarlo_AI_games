@@ -31,3 +31,31 @@ python.exe -m venv montecarlo # sostiture montecarlo con il nome del prorpio amb
 .\montecarlo\scripts\activate
 # ora si è all'interno dell'ambiente virtiule.
 ```
+
+Per uscire dall'ambiente virtuale è possibile eseguire in PowerShell `deactivate`.
+
+## Installazione dei requisiti
+Se si dispone di una GPU Nvidia, è necessario scoprire la versione dei CUDA Cores per poter installare la versione di `PyTorch` corretta. Per farlo basta eseguire nel terminale `nvcc --version`. L'output dovrebbe somigliare al seguente.
+```
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_13:58:20_Pacific_Daylight_Time_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+```
+Da notare che all'ultima riga appare la versione dei CUDA, `13.0` nel mio caso.
+E' possibile visitare il [sito ufficiale di `PyTorch`](https://pytorch.org/get-started/locally/) per scoprire la versione di Torch da installare. Se non si dispone dei CUDA Cores, selezionare la versione CPU-Only.
+
+> Da notare che il software di Nvidia per l'uso dei CUDA può raggiungere i 3.5GB.
+> 
+> Si cosiglia di aggiornare il driver grafico all'ultima versione tramite Nvidia App.
+
+Per installare le dipendanze eseguire nel terminale i seguenti comandi:
+```PowerShell
+pip install --no-cache-dir flask numpy matplotlib
+# Incollare la riga di codice generata dal sito di PyTorch
+```
+## Uso
+L'uso di questo prgramma è molto semplice ed è costituito da soli due passaggi:
+1) eseguire il file `main.py` digitando nel terminale `python main.py`
+2) visitare il server creato e seguire le indicazioni, per farlo bisogna aprire un browser (noi abbiamo testato su un borwser Chromium-like) e cercare nella barra dell'URL `LocalHost:5000`.
