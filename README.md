@@ -64,3 +64,14 @@ L'uso di questo prgramma è molto semplice ed è costituito da soli due passaggi
 Come dal licenza allegata, il progetto è coperto da licenza MIT. La scritta di copyright nel file `index.html` ha il solo scopo di "fare scena" durante l'open day e non ha alcun valore.
 
 Il progetto è stao scritto all'interno dell'Istituto di Istruzione Superiore "[Jean Monnet](https://www.ismonnet.edu.it/)"
+
+# Uso su Linux
+> Stiamo ancora testando il porgramma su Linux
+
+Installazione delle dimendenze.
+```bash
+sudo apt install git zip unzip make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev libncurses5-dev libffi-dev libffi8 ubuntu-dev-tools
+```
+```bash
+curl -fsSL https://pyenv.run | bash
+```
