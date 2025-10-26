@@ -83,22 +83,38 @@ def complex_solver():
 @app.route('/remove_models', methods=['GET', 'POST'])
 def remove_models():
     try:
-        folder = os.path.join(os.path.expandvars('%LOCALAPPDATA%'), 'Temp', 'models')
-        if os.path.exists(folder):
-            for filename in os.listdir(folder):
-                file_path = os.path.join(folder, filename)
-                if os.path.isfile(file_path):
-                    os.remove(file_path)
-            os.rmdir(folder)
+        if sys.platform == 'win32':
+            folder = os.path.join(os.path.expandvars('%LOCALAPPDATA%'), 'Temp', 'models')
+            if os.path.exists(folder):
+                for filename in os.listdir(folder):
+                    file_path = os.path.join(folder, filename)
+                    if os.path.isfile(file_path):
+                        os.remove(file_path)
+                os.rmdir(folder)
+            else:
+                return "<pre>Errore durante la rimozione dei modelli: nessun modello da rimuovere.</pre>"
+            return """
+            <pre>Modelli rimossi con successo.</pre>
+            <button onclick="window.location.href='/'">Torna alla pagina principale</button>
+            """
         else:
-            return "<pre>Errore durante la rimozione dei modelli: nessun modello da rimuovere.</pre>"
-        return """
-        <pre>Modelli rimossi con successo.</pre>
-        <button onclick="window.location.href='/'">Torna alla pagina principale</button>
-        """
+            folder = '/tmp/models'
+            if os.path.exists(folder):
+                for filename in os.listdir(folder):
+                    file_path = os.path.join(folder, filename)
+                    if os.path.isfile(file_path):
+                        os.remove(file_path)
+                os.rmdir(folder)
+            else:
+                return "<pre>Errore durante la rimozione dei modelli: nessun modello da rimuovere.</pre>"
+            return """
+            <pre>Modelli rimossi con successo.</pre>
+            <button onclick="window.location.href='/'">Torna alla pagina principale</button>
+            """
     except Exception as e:
         traceback.print_exc()
         return f"<pre>Errore durante la rimozione dei modelli: {e}</pre>"
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=5000, debug=True)
