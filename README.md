@@ -1,14 +1,14 @@
 # Montecarlo_AI_games
 Questo progetto contiene una batteria di due giochi (il simulatore di una roulette ed un risolutore di equezioni alimentato dall'intelligenza artificiale di `PyTorch`) che consentono all'utente di capire divertendosi in cosa consiste il metodo Montecarlo.
 
-Per chiarezza, si precisa che questo progetto è stato pensato per l'aula di matematica dell'open day di una Liceo Scientifico.
+Per chiarezza, si precisa che questo progetto è stato pensato per l'aula di matematica dell'open day di un Liceo Scientifico.
 
 # Requistiti di sistema
-Il software è stato sviluppato per Windows e non è mai stato testato su una macchina nativa Linux. Il risolutore di equazioni non funziona in WSL, poiché è impossibile creare una nuova instanza del file `cmd.exe` e non esiste una konsole Linux vera e propria.
+Il software è stato sviluppato per Windows, ma è perfettamente funzionante anche su macchine Linux (noi lo abbiamo testato su Ubuntu 24.04). Il risolutore di equazioni non funziona in WSL, poiché è impossibile creare una nuova instanza del file `cmd.exe` e non esiste una konsole Linux vera e propria.
 
-Anche se non strettamente necessaria, è **vivamente consigliata** una scheda video dotata di **GPU Nvidia RTX** e almeno **4GB di memoria VRAM**, poiché l'intelligenza artificiale basata su PyTorch sa sfrutta un hardware Nvidia può essere centinaia di volte più veloce rispeto all'uso su CPU.
+Anche se non strettamente necessaria, è **vivamente consigliata** una scheda video dotata di **GPU Nvidia RTX** e almeno **4GB di memoria VRAM**, poiché l'intelligenza artificiale basata su PyTorch che sfrutta un hardware Nvidia può essere centinaia di volte più veloce rispeto all'uso su CPU.
 
-Il programma frutta i tipi di dato `float64` e `int64`, quindi è vivamente consigliato un **porcessore a 64 bit**.
+Il programma sfrutta i tipi di dato `float64` e `int64`, quindi è vivamente consigliato un **porcessore a 64 bit**.
 
 Oltre alle libreria di sistema, è necessario installare le librerie `NumPy`, `Flask`, `MatPlotLib` e `PyTorch`.
 > Per quest'ultima libreria, seguire la quida qui sotto.
@@ -16,12 +16,13 @@ Oltre alle libreria di sistema, è necessario installare le librerie `NumPy`, `F
 Il programma è stato testato con **Python 3.13.7**.
 
 # Installazione e uso
-> Si parte dal presupposto che sul computer sia già installata una versione di Python (e che sia inclusda nel path) adatta e `git`
+> Si parte dal presupposto che sul computer sia già installata la versione di Python adatta (e che sia inclusda nel path) e `git`. Per ulteriori informazioni riguardanti l'installazione di Python, vedere in fondo al ducumento.
 
 ## Creazione dell'ambiente virtuale
-Si consiglia di eseguire questo programma in un ambiente virtuale isolato, per "interferenze" e possibili errori dovuti ad altri progetti. Pre creare l'ambiente virtuale seguire le istruzioni che seguono.
+Si consiglia di eseguire questo programma in un ambiente virtuale isolato, per evitare "interferenze" e possibili errori dovuti ad altri progetti. Per creare l'ambiente virtuale seguire le istruzioni che seguono.
 
-> Questa guida fa uso di Windows PowerShell, apribile selezionado "Terminale" dopo aver fatto click col tasto destro del mouse sulla finestra di Windows sulla barra delle applicazioni
+### Su Windows
+> Questa guida fa uso di Windows PowerShell, apribile selezionado "Terminale" dopo aver fatto click col tasto destro del mouse sulla finestra di Windows sulla barra delle applicazioni.
 
 ```PowerShell
 cd %USERPROFILE%\documents # o la directory in cui creare l'ambiente
@@ -29,6 +30,16 @@ git clone https://github.com/giacobarzo08/Montecarlo_AI_games.git
 cd Montecarlo_AI_games
 python.exe -m venv montecarlo # sostiture montecarlo con il nome del prorpio ambiente
 .\montecarlo\scripts\activate
+# ora si è all'interno dell'ambiente virtiule.
+```
+
+### Linux
+```bash
+cd ~/Documenti # o la directory in cui creare l'ambiente
+git clone https://github.com/giacobarzo08/Montecarlo_AI_games.git
+cd Montecarlo_AI_games
+python3 -m venv montecarlo # sostiture montecarlo con il nome del prorpio ambiente
+./montecarlo/bin/activate
 # ora si è all'interno dell'ambiente virtiule.
 ```
 
@@ -43,11 +54,14 @@ Built on Wed_Aug_20_13:58:20_Pacific_Daylight_Time_2025
 Cuda compilation tools, release 13.0, V13.0.88
 Build cuda_13.0.r13.0/compiler.36424714_0
 ```
+In Linux potrebbe essere necessario installare `nvcc`. E' possibile farlo con: `sudo apt install nvidia-cuda-toolkit`.
+
 Da notare che all'ultima riga appare la versione dei CUDA, `13.0` nel mio caso.
+
 E' possibile visitare il [sito ufficiale di `PyTorch`](https://pytorch.org/get-started/locally/) per scoprire la versione di Torch da installare. Se non si dispone dei CUDA Cores, selezionare la versione CPU-Only.
 
 > Da notare che il software di Nvidia per l'uso dei CUDA può raggiungere i 3.5GB.
-> 
+>
 > Si cosiglia di aggiornare il driver grafico all'ultima versione tramite Nvidia App.
 
 Per installare le dipendanze eseguire nel terminale i seguenti comandi:
@@ -65,10 +79,9 @@ Come dal licenza allegata, il progetto è coperto da licenza MIT. La scritta di 
 
 Il progetto è stao scritto all'interno dell'Istituto di Istruzione Superiore "[Jean Monnet](https://www.ismonnet.edu.it/)"
 
-# Uso su Linux
-> Stiamo ancora testando il porgramma su Linux
+# Installazione di Python
+Riportiamo di seguito i comandi da inserire nel terminale per istallare `pyenv`, un tool proprio di Linux che facilita la gestione degli interpreti Python. Per ulteriori informazioni, vi invitiamo a visitare la [loro pagina GitHub](https://github.com/pyenv).
 
-Installazione delle dimendenze.
 ```bash
 sudo apt install -y make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
