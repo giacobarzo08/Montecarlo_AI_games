@@ -79,6 +79,8 @@ Come dal licenza allegata, il progetto è coperto da licenza MIT. La scritta di 
 
 Il progetto è stao scritto all'interno dell'Istituto di Istruzione Superiore "[Jean Monnet](https://www.ismonnet.edu.it/)"
 
+[Guarda il videotutorial su youtube!](https://youtu.be/2yrn-dQug5M)
+
 # Installazione di Python
 Riportiamo di seguito i comandi da inserire nel terminale per istallare `pyenv`, un tool proprio di Linux che facilita la gestione degli interpreti Python. Per ulteriori informazioni, vi invitiamo a visitare la [loro pagina GitHub](https://github.com/pyenv).
 
